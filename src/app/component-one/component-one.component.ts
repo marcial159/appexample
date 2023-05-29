@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-component-one',
@@ -6,14 +6,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./component-one.component.css']
 })
 export class ComponentOneComponent implements OnInit {
-  @Output() myAction = new EventEmitter<string>();
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+  inputValue?: string;
+  @Output() sendText = new EventEmitter<string>();
 
   onClickAction(): void {
-    this.myAction.emit('accion realizada en el componente 1');
+    this.sendText.emit(this.inputValue);
   }
 }
 
