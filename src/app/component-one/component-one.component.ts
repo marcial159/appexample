@@ -9,11 +9,11 @@ export class ComponentOneComponent implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  inputValue?: string;
-  @Output() sendText = new EventEmitter<string>();
+  inputText: string='';// valor del input text
+  @Output() sendText = new EventEmitter<string>(); //enviando mediante el EventEmiter
 
-  onClickAction(): void {
-    this.sendText.emit(this.inputValue);
+  onClickAction(): void { // metodo onclick del boton
+    this.sendText.emit(this.inputText);
   }
 }
 
