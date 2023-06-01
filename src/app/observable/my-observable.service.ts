@@ -24,9 +24,10 @@ export class MyObservableService {
         let numberTemp=Math.floor(Math.random()*100)+1
         this.listNumber.push(numberTemp)//agrega a mi array el valor de numbertemp
         this.myObservable$.next(this.listNumber)//
-    },5000)
+        //this.mylogic : en caso se use setTimeout espera el tiempo indicado para ejecutarse
+    },5000)//se indica el tiempo donde cada 5 sec se ejecuta el codigo indicado
   }
   myObservableChange$():Observable<Array<number>>{//creo la funcion observable con el mismo tipo del observable
-    return this.myObservable$.asObservable();
+    return this.myObservable$.asObservable();//retorna myobservable como un observable(as)
   }
 }
